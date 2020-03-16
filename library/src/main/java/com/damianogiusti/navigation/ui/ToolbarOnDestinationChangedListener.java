@@ -73,9 +73,9 @@ public class ToolbarOnDestinationChangedListener extends AbstractAppBarOnDestina
                                      @StringRes int contentDescription) {
         Toolbar toolbar = mToolbarWeakReference.get();
         if (toolbar != null) {
+            boolean useTransition = mAnimationsEnabled && icon == null && toolbar.getNavigationIcon() != null;
             toolbar.setNavigationIcon(icon);
             toolbar.setNavigationContentDescription(contentDescription);
-            boolean useTransition = mAnimationsEnabled && icon == null && toolbar.getNavigationIcon() != null;
             if (useTransition) {
                 TransitionManager.beginDelayedTransition(toolbar);
             }

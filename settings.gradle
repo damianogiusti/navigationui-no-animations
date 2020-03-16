@@ -1,0 +1,3 @@
+rootProject.name='NavigationUI Toolbar Disable Animations'
+include ':app'
+include ':library'
